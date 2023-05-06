@@ -1,0 +1,237 @@
+/* @font-face {
+    font-family: poppins;
+    src: url(./assets/fonts/Poppins-Regular.ttf);
+} */
+
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: hsl(0, 0%, 94%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator {
+    background-color: hsl(0, 0%, 100%);
+    width: 680px;
+    height: 500px;
+    padding: 2.4rem;
+    border-radius: 1rem;
+    border-bottom-right-radius: 10rem;
+    display: flex;
+    flex-direction: column;
+}
+
+/* form */
+.form {
+    position: relative;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 1.5rem;
+    padding-bottom: 2.4rem;
+    border-bottom: 1px solid hsl(0, 0%, 86%);
+}
+
+.input-field {
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.input-field input {
+    border: none;
+    background-color: transparent;
+    color: hsl(0, 0%, 8%);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    border: 0.6px solid hsl(0, 0%, 86%);
+    outline-color: hsl(259, 100%, 65%);
+    width: 100%;
+    padding: 0.4rem 1rem;
+    font-size: 2rem;
+    border-radius: 0.4rem;
+}
+
+.input-field input::placeholder {
+    color: hsl(0, 1%, 44%);
+}
+
+.input-field label {
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 0.8rem;        
+    color: hsl(0, 1%, 44%);
+}
+
+.error {
+    font-size: 0.8rem;
+    font-style: italic;
+    color: hsl(0, 100%, 67%);    ;
+}
+
+.btn {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    border-radius: 50%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transform: translateY(50%);
+}
+
+.btn svg {
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 1rem;
+    background-color: hsl(259, 100%, 65%);
+    width: 4.6rem;
+    height: 4.6rem;
+    transition: background-color 0.2s ease;
+}
+
+.btn svg:hover {
+    background-color: hsl(0, 0%, 8%);
+}
+
+/* result */ 
+.result {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.result p {
+    font-size: 4.6rem;
+    font-style: italic;
+    font-weight: 800;
+    color: hsl(0, 0%, 8%);
+}
+
+.result p:not(:last-child) {
+    margin-bottom: -1.8rem;
+}
+
+.result span {
+    color: hsl(259, 100%, 65%);
+    letter-spacing: 0.6rem;
+}
+
+@media (max-width: 768px) {
+    .calculator {
+        width: 90%;
+        height: 580px;
+    }
+
+    .form {
+        padding: 2.6rem 0 4rem;
+    }
+
+    .btn {
+        right: 50%;
+        bottom: 0;
+        transform: translate(50%, 50%);
+    }
+
+    .result {
+        padding: 1.6rem 0;
+    }
+}
+
+@media (max-width: 560px)  {
+    .calculator {
+        padding: 1rem;
+    }
+
+    .form {
+        gap: 0.8rem;
+    }
+    
+    .input-field {
+        width: 100px;
+        gap: 0.2rem;
+    }
+
+    .input-field label, .error {
+        font-size: 0.6rem;
+    }
+    
+    .input-field input {
+        padding: 0.4rem 0.4rem;
+        font-size: 1.2rem;
+    }
+
+    .btn svg {
+        width: 3.6rem;
+        height: 3.6rem;
+        padding: 1rem;
+    }
+
+    .result p {
+        font-size: 3.8rem;
+    }
+}
+
+@media (max-width: 420px) {
+    .calculator {
+        height: 420px;
+    }
+    
+    .form {
+        padding: 2.2rem 0 3.2rem;
+    }
+
+    .btn svg {
+        width: 3.2rem;
+        height: 3.2rem;
+        padding: 1rem;
+    }
+    
+    .result {
+        padding: 1.6rem 0;
+    }
+
+    .result p {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 375px) {
+    .result p {
+        font-size: 2.6rem;
+    }
+
+    .result p:not(:last-child) {
+        margin-bottom: -1rem;
+    }
+}
+
+/* active states */
+.result.active span {
+    letter-spacing: normal;
+    padding-right: 0.4rem;
+}
+
+.input-field.invalid input {
+    outline-color: hsl(0, 100%, 67%);
+}
+
+.input-field.invalid label {
+    color: hsl(0, 100%, 67%);
+}
+
+/* frankuxur */

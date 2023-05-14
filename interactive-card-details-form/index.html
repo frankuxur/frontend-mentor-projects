@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Interactive Card Details Form</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./assets/style.css">
+
+</head>
+<body>
+
+  <main class="main">
+    <section class="cards">
+      <div class="cards__front card">
+        <img src="./assets/images/card-logo.svg" class="logo" alt="logo">
+        <img src="./assets/images/bg-card-front.png" class="card-img" alt="front">
+        <p>0000 0000 0000 0000</p>
+        <p>Jane Appleseed</p>
+        <p>00/00</p>
+      </div>
+
+      <div class="cards__back card">
+        <img src="./assets/images/bg-card-back.png" class="card-img" alt="back">
+        <p>000</p>
+      </div>
+    </section>
+
+    <section class="component">
+
+      <form class="form">
+        
+        <div class="form__field">
+          <label for="name">Cardholder Name</label>
+          <input type="text" id="name" maxlength="20" placeholder="e.g. Jane Appleseed"> 
+          <p class="error">Can't be blank</p>
+        </div>
+
+        <div class="form__field">
+          <label for="number">Card Number</label>
+          <input type="text" id="number" maxlength="16" placeholder="e.g. 1234 5678 9123 0000">
+          <p class="error">Can't be blank</p>
+        </div> 
+
+        <div class="form__field exp">
+          <label for="month">Exp. Date (MM/YY)</label>
+          <input type="text" id="month" minlength="1" maxlength="2" placeholder="MM">
+          <input type="text" id="year" minlength="1" maxlength="2" placeholder="YY">
+          <p class="error">Can't be blank</p>
+          <p class="error">Can't be blank</p>
+        </div>
+
+        <div class="form__field cvc">
+          <label for="cvc">CVC</label>
+          <input type="text" id="cvc" minlength="1" maxlength="3" placeholder="e.g. 123">
+          <p class="error">Can't be blank</p>
+        </div>
+
+        <button class="submit">Confirm</button>
+
+      </form>
+
+      <section class="complete hidden visuallyhidden">
+        <img src="./assets/images/icon-complete.svg" alt="complete">
+
+        <h2>Thank you!</h2>
+
+        <p>We've added your card details</p>
+
+        <button class="continue">Continue</button>
+      </section>
+    </section>
+  </main>
+  
+  <!-- JavaScript -->
+  <script src="./assets/script.js"></script>
+</body>
+</html>
+
+<!-- frankuxur -->

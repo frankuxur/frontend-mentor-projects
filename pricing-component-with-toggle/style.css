@@ -1,0 +1,256 @@
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+:root {
+    --Linear-Gradient: hsl(236, 72%, 79%) to hsl(237, 63%, 64%);
+    --Very-Light-Grayish-Blue: hsl(240, 78%, 98%);
+    --Light-Grayish-Blue: hsl(234, 14%, 74%);
+    --Grayish-Blue: hsl(233, 13%, 49%);
+    --Dark-Grayish-Blue: hsl(232, 13%, 33%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    min-height: 100vh;
+    width: 100%;
+    background-color: var(--Very-Light-Grayish-Blue);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+}
+
+p {
+    font-size: 15px;
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    font-family: inherit;
+}
+
+.header__title {
+    text-align: center;
+    color: var(--Grayish-Blue);
+    margin-bottom: 2rem;
+}
+
+.toggle-element {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.4rem;
+}
+
+.toggle-element p {
+    color: var(--Light-Grayish-Blue);
+}
+
+.toggle {
+    cursor: pointer;
+    border: 1px solid #ccc;
+    height: 2rem;
+    width: 3.6rem;
+    border-radius: 4rem;
+    background-image: linear-gradient(hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+    /* display: flex;
+    justify-content: flex-start;
+    align-items: center; */
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.toggle__btn {
+    height: 1.6rem;
+    width: 1.6rem;
+    margin: 0.2rem;
+    border-radius: 50%;
+    background-color: var(--Very-Light-Grayish-Blue);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-64%);
+    transition: all 0.4s ease;
+}
+
+.toggle:hover {
+    opacity: 0.8;
+}
+
+.toggle.active .toggle__btn {
+    left: 44%;
+    /* justify-content: flex-end; */
+}
+
+.main {
+    margin-top: 3rem;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    width: 20rem;
+    padding: 1.6rem;
+    color: var(--Dark-Grayish-Blue);
+    border-radius: 0.4rem;
+    background-color: hsl(0, 0%, 100%);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.card:nth-child(1) {
+    border-radius: 0.4rem 0 0 0.4rem;
+}
+
+.card:nth-child(2) {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    background-image: linear-gradient(hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+    color: hsl(0, 0%, 100%);
+}
+
+.card:nth-child(3) {
+    border-radius: 0 0.4rem 0.4rem 0;
+}
+
+.price-section {
+    /* border: 1px solid #ccc; */
+    text-align: center;
+    height: 3.6rem;
+    width: 100%;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.card__price {
+    font-size: 3.6rem;
+    font-weight: 700;
+}
+
+.card__price:first-child {
+    margin-top: -0.6rem;
+    transition: all 0.4s ease-in-out;
+}
+
+.price-section.active .card__price:first-child {
+    margin-top: -5rem;
+}
+
+.card__features {
+    width: 100%;
+}
+
+.card__features li {
+    width: 100%;
+    padding: 1rem 0;
+    text-align: center;
+    border-top: 0.6px solid var(--Light-Grayish-Blue);
+}
+
+.card__features li:last-child {
+    border-bottom: 0.6px solid var(--Light-Grayish-Blue);
+}
+
+.card__btn {
+    color: var(--Very-Light-Grayish-Blue);
+    background-image: linear-gradient(hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+    border: 2px solid hsl(0, 0%, 100%);
+    width: 100%;
+    padding: 1rem;
+    border-radius: 0.4rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    word-spacing: 4px;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+.card__btn:hover {
+    background-image: none;
+    color: hsl(237, 63%, 64%);
+    border: 2px solid var(--Light-Grayish-Blue);
+}
+
+.card:nth-child(2) .card__btn {
+    background-image: linear-gradient(hsl(0, 0%, 100%), hsl(0, 0%, 100%));
+    color: hsl(237, 63%, 64%);
+}
+
+.card:nth-child(2) .card__btn:hover {
+    background-image: none;
+    color: hsl(0, 0%, 100%);
+    border-color: hsl(0, 0%, 100%);
+}
+
+.graphic-art {
+    position: absolute;
+    z-index: -1;
+}
+
+.graphic-art:nth-of-type(1) {
+    top: 0;
+    right: 0;
+}
+
+.graphic-art:nth-of-type(2) {
+    bottom: 0;
+    left: 0;
+}
+
+@media (max-width: 1080px) {
+    .header {
+        margin-top: 4rem;
+    }
+    
+    .cards {
+        flex-direction: column;
+        gap: 2rem;
+        margin-bottom: 4rem;
+    }
+
+    .card:nth-child(1), 
+    .card:nth-child(3) {
+        border-radius: 0.4rem;
+    }
+
+    .card:nth-child(2) {
+        padding-top: 1.6rem;
+        padding-bottom: 1.6rem;
+    }
+}
+
+@media (max-width: 375px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .card {
+        width: 280px;
+    }
+}
